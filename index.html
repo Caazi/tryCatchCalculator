@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tryCatchCalculator</title>
+</head>
+<body>
+    <script>
+        const calculator = {
+        add: function (num1, num2) {
+        return num1 + num2;
+  },
+        subtract: function (num1, num2) {
+        return num1 - num2;
+  },
+        multiply: function (num1, num2) {
+        return num1 * num2;
+  },
+        divide: function (num1, num2) {
+    try {
+      if (num2 === 0) {
+        throw new Error("Division by zero is not allowed.");
+      }
+      return num1 / num2;
+    } catch(error) {
+      console.error(error.message);
+    }
+  },
+};
+
+console.log("Addition = " + calculator.add(5, 3));      
+console.log("Substraction = " +calculator.subtract(7, 2)); 
+console.log("Multiplication = " +calculator.multiply(4, 6)); 
+console.log("Division = " +calculator.divide(10, 2));   
+console.log("Sample Error = " +calculator.divide(8, 0));   
+    </script>
+</body>
+</html>
